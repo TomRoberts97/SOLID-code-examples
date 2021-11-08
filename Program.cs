@@ -31,14 +31,18 @@ namespace SOLID_code_examples
 
 
         //OCP Pass
-        static void Main(string[] args)
-        {
-            var user = new Kustomer();
+        //static void Main(string[] args)
+        //{
+        //    var user1 = new Kustomer();
+        //    var user2 = new Driver();
+        //    var user3 = new Admin();
 
-            user.SignIn();
 
-            Console.ReadKey();
-        }
+
+        //    user1.SignIn();
+
+        //    Console.ReadKey();
+        //}
 
 
 
