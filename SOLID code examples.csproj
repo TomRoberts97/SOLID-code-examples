@@ -6,4 +6,8 @@
     <RootNamespace>SOLID_code_examples</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ISP\Passing\" />
+  </ItemGroup>
+
 </Project>

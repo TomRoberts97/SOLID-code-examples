@@ -8,24 +8,21 @@ namespace SOLID_code_examples.SRP.Passing
 {
     public class CustomerNew
     {
-
-        //This class is now just responsible for the models data
-
-        public CustomerNew(string name, string address, int age, string email, string password)
+        public CustomerNew(string name, string address, int age, string email)
         {
             Name = name;
             Address = address;
             Age = age;
             Email = email;
-            Password = password;
+
+            Console.WriteLine($"Customer: {Name}, {Address}, {Age} created! Email; {Email}" );
+            Console.WriteLine("");
         }
 
         public string Name { get; }
         public string Address { get; }
         public int Age { get; }
         public string Email { get; }
-        public string Password { get; }
-
 
     }
 }

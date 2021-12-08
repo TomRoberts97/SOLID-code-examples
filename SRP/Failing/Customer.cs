@@ -26,7 +26,8 @@ namespace SOLID_code_examples.SRP
         public void RegisterCustomer()   //Should this be here?
         {
 
-            // HANDLE SENDING CUSTOMER DATABASE 
+            // HANDLE SENDING CUSTOMER DATA TO DATABASE 
+
             Console.WriteLine($"{Name} saved to Database");
             Console.WriteLine("");
 

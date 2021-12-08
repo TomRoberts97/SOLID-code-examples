@@ -8,6 +8,7 @@ namespace SOLID_code_examples.OCP.Passing
 {
     public interface IBeeliveryUser
     {
+        
         public void SignIn();
     }
 }
