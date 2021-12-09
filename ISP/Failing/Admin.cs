@@ -14,21 +14,8 @@ namespace SOLID_code_examples.ISP.Failing
             Email = email;
         }
         public string ID { get; set; }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Email { get; set; }
-        public string DriverID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string AdminPermissions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); } //driver CANNOT have Admin Permissions
-
-        public void AcceptOrder()
-        {
-            throw new NotImplementedException(); //Admin cant make orders
-
-        }
-
-        public void CompleteOrder()
-        {
-            throw new NotImplementedException();
-        }
+        public string AdminPermissions { get; set; } 
 
         public void DeleteAccount()
         {

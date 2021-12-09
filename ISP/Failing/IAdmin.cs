@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace SOLID_code_examples.ISP.Failing
 {
-    public interface IUser
+    public interface IAdmin : IUser
     {
-        string ID { get; set; }
-        string Email { get; set; }
-        void SignIn();
-        void SignOut();
+        string AdminPermissions { get; set; }
+        void DeleteAccount();
     }
 }

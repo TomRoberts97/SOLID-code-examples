@@ -7,10 +7,24 @@ using System.Threading.Tasks;
 
 namespace SOLID_code_examples.DIP
 {
-    public class Order
+    public class Order : IOrder
     {
+        private readonly ILogger _logger;
+        private readonly IMessagingService _messagingService;
+
+        public Order(string orderToken, ICustomer customer, List<string> productsList, decimal total, bool isComplete, ILogger logger, IMessagingService messaging)
+        {
+            OrderToken = orderToken;
+            Customer = customer;
+            ProductList = productsList;
+            Total = total;
+            IsComplete = isComplete;
+
+            _logger = logger;
+            _messagingService = messaging;
+        }
         public string OrderToken { get; set; }
-        public Customer Customer { get; set; }
+        public ICustomer Customer { get; set; }
         public List<string> ProductList { get; set; }
         public decimal Total { get; set; }
         public bool IsComplete { get; set; }
@@ -18,22 +32,22 @@ namespace SOLID_code_examples.DIP
         public void AddProduct(string productName, decimal price)
         {
             ProductList.Add(productName);
-            
-            Total += price;
 
-            Logger logger = new Logger();
-            logger.Log($"{productName} added to the basket! {price} added to Total. Total: £{Total}");
+            Total += price;
+            
+            
+            _logger.Log($"{productName} added to the basket! {price} added to Total. Total: £{Total}");
         }
 
         public void CompleteOrder()
         {
             IsComplete = true;
 
-            Logger logger = new Logger();
-            logger.Log($"Order complete! Total: £{Total}");
+            
+            _logger.Log($"Order complete! Total: £{Total}");
 
-            Emailer emailer = new Emailer();
-            emailer.SendEmail(Customer, $"Order complete! Total: £{Total}");
+            
+            _messagingService.SendMessage(Customer, $"Order complete! Total: £{Total}");
         }
     }
 }
